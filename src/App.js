@@ -9,14 +9,14 @@ class App extends React.Component {
 		data : {},
 	}
 	async componentDidMount() {
-		const fetchedData =  await fetchData();
-		this.setState({
-			data : fetchData,
-		});
-	}
+    const data = await fetchData();
+
+    this.setState({ data });
+  }
 
 	render(){
 		const {data} = this.state;
+		console.log(data);
 		return(
 			<div className = {styles.container}>
 			<Cards data = {data} />
