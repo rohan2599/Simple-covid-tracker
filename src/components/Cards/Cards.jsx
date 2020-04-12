@@ -2,6 +2,7 @@ import React from 'react';
 import { Card ,CardContent , Typography  , Grid , CircularProgress } from '@material-ui/core';  
 import CountUp from 'react-countup';
 import cx from 'classnames';
+import * as moment from 'moment';
 import styles from './Cards.module.css';
 const Info = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
 if(!confirmed){
@@ -17,7 +18,7 @@ console.log(confirmed.value);
    						<Typography variant = "h5">
                 <CountUp start = {0} end= {confirmed.value} duration = {2.5} separator = "," />
                </Typography>
- 						<Typography color = "textSecondary" > {new Date(lastUpdate).toDateString()} </Typography>
+ 						<Typography color = "textSecondary" style = {{ fontSize : '14px'}}> Updated {moment(lastUpdate).fromNow()}  </Typography>
  						<Typography variant = "body2" > Number of active cases COVID-19 </Typography>
 
  					</CardContent>
@@ -28,7 +29,7 @@ console.log(confirmed.value);
               <Typography variant = "h5">
                 <CountUp start = {0} end= {recovered.value} duration = {2.5} separator = "," />
                </Typography>
-            <Typography color = "textSecondary" > {new Date(lastUpdate).toDateString()} </Typography>               
+            <Typography color = "textSecondary" style = {{ fontSize : '14px'}} > Updated {moment(lastUpdate).fromNow()} </Typography>               
  						<Typography variant = "body2" > Number of active cases COVID-19 </Typography>
 
  					</CardContent>
@@ -39,7 +40,7 @@ console.log(confirmed.value);
               <Typography variant = "h5">
                 <CountUp start = {0} end= {deaths.value} duration = {2.5} separator = "," />
                </Typography>
-            <Typography color = "textSecondary" > {new Date(lastUpdate).toDateString()} </Typography>
+            <Typography color = "textSecondary" style = {{ fontSize : '14px'}} > Updated {moment(lastUpdate).fromNow()}  </Typography>
  						<Typography variant = "body2" > Number of active cases COVID-19 </Typography>
 
  					</CardContent>
